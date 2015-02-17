@@ -5,7 +5,6 @@ public class FirstComeFirstServed extends AlgStrategies {
     public static ArrayList<Process> FirstComeFirstServed(ArrayList<Process> list) {
 
         Process process;
-        int maxQuanta = 0;
         ArrayList<Process> processList = new ArrayList<>(list);
         ArrayList<Process> processResult = new ArrayList<>();
 
@@ -16,16 +15,13 @@ public class FirstComeFirstServed extends AlgStrategies {
                     if (!process.isResponseTimeSet()) {
                         process.setResponseTime(i);
                     }
-                    process.decreaseRunTime();
+                    process.setIsDone();
                     if (process.isDone()) {
                         process.setCompleteTime(i);
                         processList.remove(processList.size() - 1);
                         processResult.add(process);
                     }
-                    maxQuanta = 0;
-                } else {
-                    maxQuanta++;
-                }
+                } 
             } else {
                 break;
             }

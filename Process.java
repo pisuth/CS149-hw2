@@ -51,12 +51,11 @@ public class Process implements Comparable<Object> {
         return priority;
     }
 
-    public String getId() {
+    public String getProcessName() {
         return processName;
     }
     
-    public void decreaseRunTime() {
-        //runTime = runTime - 1.0000f;
+    public void setIsDone() {
         isDone = true;
     }
     
